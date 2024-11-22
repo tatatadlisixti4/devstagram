@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    //
+    public function __construct() {
+    }
+
     public function index() {
-        dd(auth()->user());
+        return view('dashboard');
     }
 }
