@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
@@ -9,6 +10,10 @@ class RegisterController extends Controller
     }
 
     public function store(Request $request){
+        // dd($request);
+        // dd($request->get('username'));
+
+        // Validación
         $request->validate([
             'name' => 'required|max:30',
             'username' => 'required|unique:users|min:3|max:20',
@@ -16,6 +21,13 @@ class RegisterController extends Controller
             'password' => 'required|confirmed|min:6'
         ]);
 
-        dd('Creando usuario');
+        User::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+
+        // Redireccionar al usuario
     }
 }
