@@ -40,7 +40,7 @@
                         type="text"
                         placeholder="Tu Nombre de Usuario"
                         class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
-                        value="{{ old('name') }}"
+                        value="{{ old('username') }}"
                     />
                     @error('username')
                     <p class="bg-red-500 text-white my-2 rounded-lg p-2 text-center">{{ $message }}</p>
@@ -57,7 +57,7 @@
                         type="email"
                         placeholder="Tu Email de Registro"
                         class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror"
-                        value="{{ old('name') }}"
+                        value="{{ old('email') }}"
                     />
                     @error('email')
                     <p class="bg-red-500 text-white my-2 rounded-lg p-2 text-center">{{ $message }}</p>
